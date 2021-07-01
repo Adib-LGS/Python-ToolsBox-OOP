@@ -10,12 +10,11 @@ class Human:
         self.list_of_humans = []
     
     def create_human(self):
-        self.list_of_humans.extend([self.name, self.sex, self.birth])
         list_of_human = self.list_of_humans
+        list_of_human.extend([self.name, self.sex, self.birth])
         print(list_of_human)
     
 
 
 h1 = Human("first", "Male", "1-1-0001")
 h1.create_human()
-print(h1)
