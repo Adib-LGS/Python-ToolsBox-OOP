@@ -29,7 +29,7 @@ class ToolsBox(ABC):
 
     def add_tools(self):
         if self.number_of_tools < self.MAX_NUMBER_OF_TOOLS:
-            self.toolbox.append(isinstance(self, __class__))
+            self.toolbox.extend([self])
             self.MAX_NUMBER_OF_TOOLS -= self.number_of_tools
             return f"There's actually: {self.number_of_tools}-{self.name} in the ToolBox"
 
