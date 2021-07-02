@@ -35,9 +35,14 @@ class Human:
         Human.humans_planet = new_planet_name
         return new_planet_name
 
+    @staticmethod
+    def whats_an_human() -> str:
+        print('Humans cannot be defined...')
+
 
 h1 = Human(name="first", sex="Male", birth=1)
 h1.create_human()
 h1.get_humans_age()
 print(f"Numbers of human being created: {h1.human_created}")
 print(f"{h1.name} was laid on {Human.change_humans_planet('Mars')}")
+Human.whats_an_human()
