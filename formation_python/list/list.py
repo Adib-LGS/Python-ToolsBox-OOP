@@ -41,3 +41,10 @@ list4 = ['notest1', 'notest2', 'notest3']
 list3.extend(list4)
 """extend() = list3 = list3 + list4"""
 print(list3)
+
+"""----------------------------------------------------------"""
+
+#enumerate key value in list to extract tuple
+storage = ['data1', 'data2', 'data3']
+for key, value in enumerate(storage):
+    print(f" key: {key} -> Value: {value}")
