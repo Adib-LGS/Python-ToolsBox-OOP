@@ -15,7 +15,7 @@ class Player:
     def create_file(cls):
         with open("player.data", "wb") as player_file:
             record = pickle.Pickler(player_file)
-            record.dump(p1)
+            record.dump(cls.__class__)
     
     
     @classmethod
@@ -30,6 +30,11 @@ p1 = Player("Leonidas", 49)
 p1.create_file()
 p1.open_file()
 p1.get_player_data()
+
+p2 = Player("Arigo", 33)
+p2.create_file()
+p2.open_file()
+p2.get_player_data()
 
 """with  open("../files/data.txt", "r") as files:
             content = files.read()
