@@ -66,7 +66,7 @@ class Human:
 
     @staticmethod
     def whats_an_human() -> str:
-        print('Humans cannot be defined...')
+        print('[[ Unfortunetly Humans cannot be defined... ]]')
 
 
 h1 = Human(name="First", sex="Male", birth=1)
@@ -74,8 +74,10 @@ h1.create_human()
 h1.get_humans_age()
 print(f"Numbers of human being created: {h1.human_created}")
 print(f"{h1.name} was laid on {Human.change_humans_planet('Mars')}")
-Human.whats_an_human()
+
 
 h2 = Human("Second", "Female", 1)
 h2.create_human()
 h2.get_humans_age()
+
+Human.whats_an_human()
