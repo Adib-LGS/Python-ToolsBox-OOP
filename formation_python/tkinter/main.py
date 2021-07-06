@@ -17,22 +17,44 @@ position_Y : (screen_height // 2) - (window_height // 2)
 
 def exit():
     print('exit')
+####----------------------------------------
 
-label_welcome = tkinter.Label(mainapp, text="Hello World")
-message_welcome = tkinter.Message(mainapp, text="Message in A bottle")
-input_message = tkinter.Entry(mainapp)
-button_exit = tkinter.Button(mainapp, text="EXIT", command=exit)
-check_box = tkinter.Checkbutton(mainapp, text='Agree')
-radio_button = tkinter.Radiobutton(mainapp, text='Done', value=1)
-radio_button2 = tkinter.Radiobutton(mainapp, text='Start', value=2)
+#Observer (like event-listener)
+def update_label_observer(*args):
+    var_label.set(var_entry.get())
 
-label_welcome.pack()
-message_welcome.pack()
-input_message.pack()
-button_exit.pack()
-check_box.pack()
-radio_button.pack()
-radio_button2.pack()
+def radio_change_observer():
+    if var_agreement.get():
+        print("Agree")
+    else:
+        print("Disagree")
+
+
+#widget
+var_entry = tkinter.StringVar()
+var_entry.trace_variable("w",update_label_observer)
+#Link entry to variable
+entry = tkinter.Entry(mainapp, textvariable=var_entry)
+
+var_agreement = tkinter.IntVar()
+var_agreement.trace("w", update_label_observer)
+#Link radio tu variable
+radio1 = tkinter.Radiobutton(mainapp, text="Agree ?", value=1, variable=var_agreement)
+radio2 = tkinter.Radiobutton(mainapp, text="Disagree", value=0, variable=var_agreement)
+
+var_label = tkinter.StringVar()
+label_w = tkinter.Label(mainapp, textvariable=var_label)
+
+
+var_label.set("This will change")
+
+
+entry.pack()
+label_w.pack()
+radio1.pack()
+radio2.pack()
+
+
 
 
 ##Program stay in while loop til client choose to exit
