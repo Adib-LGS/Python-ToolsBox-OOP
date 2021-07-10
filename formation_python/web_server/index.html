@@ -8,5 +8,11 @@
 </head>
 <body>
     <h1>Using own basic server</h1>
+
+    <p><% print(f"Welcome {username}") %></p>
+    <form action="result.py" method="post">
+        <p><input type="text" name="username" id="">
+        <input type="submit" value="Send"></p>
+    </form>
 </body>
 </html>
