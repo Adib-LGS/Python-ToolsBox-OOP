@@ -9,7 +9,7 @@
 <body>
     <h1>AppTwo</h1>
     <p>About us:</p>
-    <p>Our company is supervised by [{{ company_name }}]</p>
+    <p>Our company is supervised by {% for k in company_name %} [{{ k }}] {% endfor %}</p>
 
     <p>Our Organization:</p>
     <ul{% for colabs, value in collaborators.items %}
