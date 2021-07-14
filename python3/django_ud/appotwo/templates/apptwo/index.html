@@ -7,7 +7,14 @@
     <title>App Two</title>
 </head>
 <body>
-    <h1>Index App Two</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo est, dolorum ea voluptate aut aliquam aspernatur totam consequuntur sunt inventore autem quaerat quisquam? Doloribus quibusdam eveniet saepe, ducimus repudiandae veniam!</p>
+    <h1>AppTwo</h1>
+    <p>About us:</p>
+    <p>Our company is supervised by [{{ company_name }}]</p>
+
+    <p>Our Organization:</p>
+    <ul{% for colabs, value in collaborators.items %}
+        <li> Name: {{ colabs }} -- Level: {{ value }}</li>
+        {% endfor %}</ul>
+    
 </body>
 </html>

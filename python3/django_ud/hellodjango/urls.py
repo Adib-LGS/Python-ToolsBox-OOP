@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('apptwo/', vapp2.apptwo),
-   path('pictures/', vapp2.picture_detail), 
+   path('about/', vapp2.picture_detail), 
 ]

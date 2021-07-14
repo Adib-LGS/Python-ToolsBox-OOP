@@ -9,4 +9,5 @@ def apptwo(request):
 
 def picture_detail(request):
     template = loader.get_template('apptwo/index.html')
-    return HttpResponse(template.render({}, request))
+    context = {'company_name' : {'DjongoCorp Inc'} , 'collaborators': {'James' : 'CEO', 'ED' : 'DO', 'ANNA': 'BIG BOSS'}}
+    return HttpResponse(template.render(context, request))
